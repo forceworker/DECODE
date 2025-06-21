@@ -47,4 +47,6 @@ By using the predict function defined in DECODE, you can obtain the computed eva
 
 ### Notation
 The Jupyter records of the various experiments in the DECODE work can be found at: https://doi.org/10.5281/zenodo.15687743.
-The supplementary experiments in response to the reviewers that were not included in the main text can be found at: https://doi.org/10.5281/zenodo.15708922.
+
+
+The cross-omics experiments and multi-omics feature-sharing experiments can be found at https://doi.org/10.5281/zenodo.15708922.
