@@ -45,4 +45,6 @@ Initialize the stage2 and stage3 models using the DANN class and the MBdeconv cl
 #### Stage 4 (Model Prediction)
 By using the predict function defined in DECODE, you can obtain the computed evaluation metrics such as CCC, RMSE, and Pearson's r, as well as the prediction results and the labels of the test dataset.
 
-
+### Notation
+The Jupyter records of the various experiments in the DECODE work can be found at: https://doi.org/10.5281/zenodo.15687743.
+The supplementary experiments in response to the reviewers that were not included in the main text can be found at: https://doi.org/10.5281/zenodo.15708922.
