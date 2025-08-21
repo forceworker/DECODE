@@ -177,10 +177,10 @@ class data_process(object):
             if test_noise_cells:
                 test_with_noise_all = self.build_test_pseudo_bulk_with_noise(test_x_sim, test_noise_cells, noise_limit=0.2)
             test_with_noise_all = []
-            with open(f'data/{self.tissue_name}/{self.tissue_name}{len(self.type_list)}cell_nonorm.pkl', 'wb') as f:
-                pickle.dump(train, f)
-                pickle.dump(test, f)
-                pickle.dump(test_with_noise_all, f)
+            # with open(f'data/{self.tissue_name}/{self.tissue_name}{len(self.type_list)}cell_nonorm.pkl', 'wb') as f:
+            #     pickle.dump(train, f)
+            #     pickle.dump(test, f)
+            #     pickle.dump(test_with_noise_all, f)
 
 
             train_x_sim = self.normalize(train_x_sim)
