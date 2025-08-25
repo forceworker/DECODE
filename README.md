@@ -96,6 +96,8 @@ By using the predict function defined in DECODE, you can obtain the computed eva
 CCC, RMSE, Corr, pred, gt = predict(test_dataloader, type_list, model_test, if_pure)
 ```
 
+In Google Colab (https://colab.research.google.com/github/forceworker/DECODE/blob/main/train_lung_rna_colab.ipynb), there is a complete data example for Scenario 1, which allows you to fully run the DECODE method for learning purposes.
+
 ### Notation
 The Jupyter records of the various experiments in the DECODE work can be found at: https://doi.org/10.5281/zenodo.15687743.
 
