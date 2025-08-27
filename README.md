@@ -2,7 +2,7 @@
 
 **DECODE** is a deep learning framework designed for solving deconvolution problems across various omics. It utilizes cell abundance as an intermediary to address the integration of multi-omics information at the tissue level. DECODE integrates contrastive learning, adversarial training, and other approaches into a computational framework, achieving the highest accuracy in deconvolution tasks across multiple scenarios.
 <p align="center">
-  <img width="60%" src="https://github.com/forceworker/DECODE_decov/blob/main/fig/fig.png">
+  <img width="60%" src="https://github.com/forceworker/DECODE/blob/main/fig/fig.png">
 </p>
 More details can be found in paper.
 
