@@ -86,7 +86,7 @@ model.encoder.load_state_dict(encoder_params)
 loss1_list, loss2_list, nce_loss_list = model.train_model(model_save_name, True, patience)
 ```
 
-#### Stage 4 (Model Prediction)
+#### Model Prediction
 By using the predict function defined in DECODE, you can obtain the computed evaluation metrics such as CCC, RMSE, and Pearson's r, as well as the prediction results and the labels of the test dataset.
 
 ```
