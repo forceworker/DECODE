@@ -103,3 +103,9 @@ The Jupyter records of the various experiments in the DECODE work can be found a
 
 
 The cross-omics experiments and multi-omics feature-sharing experiments can be found at https://doi.org/10.5281/zenodo.15708922.
+
+## Citation
+
+If you find our work helpful in your resarch or work, please cite us.
+
+Zhao, T., Liu, R., Sun, Y. et al. DECODE: deep learning-based common deconvolution framework for various omics data. Nat Methods (2026). https://doi.org/10.1038/s41592-026-03007-y
