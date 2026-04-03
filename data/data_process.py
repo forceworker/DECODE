@@ -20,12 +20,21 @@ class data_process(object):
         self.test_sample_num = test_sample_num
         self.num_artificial_cells = num_artificial_cells
 
+    def _build_celltype_pools(self, x, y, cell_type_list=None):
+        if cell_type_list is None:
+            cell_type_list = self.type_list
+        return {
+            ct: x.loc[y[self.random_type] == ct]
+            for ct in cell_type_list
+        }
+
     def build_pseudo_bulk_no_noise(self, data, purpose):
         data_x = pd.DataFrame(data.X)
         data_x = data_x.fillna(0)
         data_x[data_x < 0] = 0
         data_y = pd.DataFrame(data.obs[self.random_type])
         data_y.reset_index(inplace=True, drop=True)
+        celltype_pools = self._build_celltype_pools(data_x, data_y, cell_type_list=self.type_list)
 
         x_sim = []
         y = []
@@ -38,7 +47,7 @@ class data_process(object):
             total_num = self.test_sample_num
         with tqdm(total=total_num, desc=f"{purpose} Samples") as pbar:
             while len(x_sim) < total_num:
-                result = self.mix_cells(data_x, data_y, cell_type_list=self.type_list)
+                result = self.mix_cells(cell_type_list=self.type_list, celltype_pools=celltype_pools)
                 if result is None:
                     continue
                 sample, label = result
@@ -115,7 +124,12 @@ class data_process(object):
         return ad.AnnData(np.array(artificial_cells), var=pd.DataFrame(index=data.var_names))
 
 
-    def mix_cells(self, x, y, cell_type_list):
+    def mix_cells(self, x=None, y=None, cell_type_list=None, celltype_pools=None):
+        if cell_type_list is None:
+            cell_type_list = self.type_list
+        if celltype_pools is None:
+            celltype_pools = self._build_celltype_pools(x, y, cell_type_list=cell_type_list)
+
         fracs = self.mixup_fraction(len(cell_type_list))
         samp_fracs = np.multiply(fracs, self.sample_size)
         samp_fracs = list(map(round, samp_fracs))
@@ -130,7 +144,7 @@ class data_process(object):
 
         artificial_samples = []
         for i, ct in enumerate(cell_type_list):
-            cells_sub = x.loc[y[self.random_type] == ct]
+            cells_sub = celltype_pools[ct]
             if cells_sub.shape[0] > 0 and samp_fracs[i] <= len(cells_sub):  
                 cells_fraction = np.random.randint(0, cells_sub.shape[0], samp_fracs[i])
                 cells_sub = cells_sub.iloc[cells_fraction, :]
