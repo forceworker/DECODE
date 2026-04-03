@@ -109,3 +109,23 @@ The cross-omics experiments and multi-omics feature-sharing experiments can be f
 If you find our work helpful in your resarch or work, please cite us.
 
 Zhao, T., Liu, R., Sun, Y. et al. DECODE: deep learning-based common deconvolution framework for various omics data. Nat Methods (2026). https://doi.org/10.1038/s41592-026-03007-y
+
+
+## Acknowledgements
+We would like to sincerely thank @henrichung-cst for their valuable contribution in improving the performance of Stage 1 pseudobulk generation.
+Their optimization significantly reduces runtime by introducing precomputed cell-type pools, making the pipeline much more efficient.
+
+## Contributing
+We warmly welcome contributions from the community!
+
+Whether you're fixing bugs, improving performance, enhancing documentation, or proposing new features — your help is highly appreciated.
+
+To get started:
+
+Fork the repository
+Create a feature branch
+Submit a pull request
+
+If you have ideas or suggestions, feel free to open an issue for discussion.
+
+Let’s build this project together 🚀
